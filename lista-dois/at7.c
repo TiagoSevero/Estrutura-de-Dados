@@ -1,11 +1,15 @@
 #include<stdio.h>
+#include<string.h>
+
+char *str1;
 
 char *strcopy(char *str){
 	
+		
 	str = "Hello World";
+	str1 = str;	
 	
-	return str;
-
+	return str1;
 } 
 
 
