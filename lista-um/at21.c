@@ -1,53 +1,61 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
 
+char str1[] = "hello ba world";
+char str2[] = "word";
 
-//TERMINAR AINDA
+void comparar (char *str1, char *str2){
 
-
-
-int comparar(char *vet1, char *vet2){
-
-	char *l1, *l2;
-	int cont = 0;
-	int i;
-	l1= &vet1[0];
-	l2= &vet2[0];
-	 			
-		for(i=0; *l1 =='\0'||*l2 =='\0'; i++){
+	char *p1, *p2;	
+	int cont = 0;	
+	p1= &str1[0];
+	p2 = &str2[0];
+	
+	int tamanho = strlen(str2); 
+	
+	if(str1[0] == str2[0]){
+		p1++;
+		p2++;
+		cont++;
+	}
+	
+	else 
+		p1++;
+	
+	while(*p1 != '\0'){
 				
-			if(*l1 == *l2){
-				l1++;		
-				l2++;
-				cont++;				
-			}				
-			else
-				l1= &vet1[0];
-				l2++;
+		if(*p1 == *p2){
+			cont++;			
+			p1++;
+			p2++;
 			
-		}			
-	return cont;
+			if(cont == tamanho){
+				break;
+			}
+		}
+		else{
+			p2 = &str2[0];			
+			cont = 0;		
+			
+			if(*p1 != *p2){
+				p1++;
+				
+			}			
+			else{
+				p1++;
+				p2++;
+				cont++;
+			}
+		}
+	}
+	if(cont == tamanho)
+		printf("CONTÉM\n");	
+	else	
+		printf("NÃO CONTÉM\n");
 }
-
 
 int main(){
 
-
-	char frase1 []= "ola mundo";
-	char frase2 []= "mundo";
-
-	char *a, *b;
-
-	a = &frase1[0];
-	b = &frase2[0];
-
-	printf("%d\n",comparar(frase1, frase2)); 
-			
-
-			
-	/*if(a==b)
-		printf("A primeira string contem a segunda segunda\n");
-	else
-		printf("A primeira string não contem a segunda segunda\n");*/	
+	comparar(str1,str2);	
 }
