@@ -11,5 +11,5 @@ Informações da Disciplina
 	
 Informações do diretório:
  
-	O diretório "Apresentação_1" possui a explanação a respeito de Algoritmos de Ordenação.
+	O diretório "Apresentação_2" possui a explanação a respeito de Algoritmos de Ordenação.
 
